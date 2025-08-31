@@ -1,7 +1,7 @@
 ## DevOps vs Cascada
 ### Descripscion General
 
-![Comparación DevOps vs Cascada](Actividad_1-CC3S2/imagenes/devops-vs-cascada.png)
+![Comparación DevOps vs Cascada](imagenes/devops-vs-cascada.png)
 El modelo **Cascada**  es un enfoque tradicional para el desarrollo de software que se deriva de los procesos de ingeniería utilizados en proyectos militares a gran escala, como se describió originalmente por Royce en 1970. Este modelo organiza el desarrollo en una serie de fases secuenciales, donde cada fase debe completarse y aprobarse antes de pasar a la siguiente.
 #### Fases del modelo en cascada
 
