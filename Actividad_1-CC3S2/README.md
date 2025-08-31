@@ -46,7 +46,7 @@ Se garantiza que el producto cumple estrictamente la regulaciones y ofrece un al
 
 
 ## Ciclo tradicional de dos pasos y silos (limitaciones y anti-patrones)
-![Silos](imagenes/silos-equipos.jpg)
+![Silos](imagenes/silos-equipos.jpeg)
 ### Descripscion General
 El **Ciclo Tradicional de dos pasos** es un proceso en 2 fases separadas:construccion(diseño,desarollo,pruebas unitarios) y operacion(despliegue , mantenimiento).Bajo esta lógica, los equipos de desarrollo entregaban un producto terminado al área de operaciones, que debía ejecutarlo y mantenerlo en producción. Esta dinámica generaba una mentalidad de handoffs (transferencias) donde el conocimiento se pasaba de un equipo a otro como si fuera un paquete cerrado, sin retroalimentación continua.
 #### Limitaciones principales del ciclo “construcción → operación”
@@ -60,8 +60,8 @@ A menudo, en un entorno de silos, se encontrarán equipos diferentes utilizando 
 Tener silos para desarrolladores de software y administradores de sistemas o ingenieros de operaciones, y tratar de solucionar los problemas en el proceso de desarrollo de software que surgieron de ese entorno, fue una gran parte del origen del movimiento devops. Sin embargo, es importante señalar que esos no son los únicos silos que pueden existir en una organización. Los equipos multifuncionales a menudo son promocionados como los anti-silos, pero estas no son las dos únicas opciones, y el hecho de que un equipo cumpla una sola función no necesariamente lo convierte en un silo. Los silos surgen de la falta de comunicación y colaboración entre equipos, no simplemente de una separación de duties.
 Los silos también favorecen una cultura de culpa. En la “visión antigua” del error humano se busca señalar responsables individuales en lugar de entender los problemas como síntomas de fallas sistémicas. Esta mentalidad no solo desalienta la colaboración, sino que también perpetúa prácticas defensivas como ocultar información o retrasar decisiones.
 ## Anti-patrones frecuentes:
-1.**Throw over the wall :**El traspaso del software como una caja negra entre desarrollo y operaciones. Este anti-patrón aumenta la probabilidad de fallas en producción y dificulta la resolución rápida de incidentes, ya que cada equipo posee solo una parte del conocimiento necesario.
-2.**Seguridad como auditoria tardia:**Cuando la seguridad se incorpora solo al final del ciclo, funciona más como una barrera que como un socio estratégico. Esto genera retrabajos y ralentiza despliegues, a la vez que deja vulnerabilidades sin detectar durante gran parte del proceso.
+1.**Throw over the wall :** El traspaso del software como una caja negra entre desarrollo y operaciones. Este anti-patrón aumenta la probabilidad de fallas en producción y dificulta la resolución rápida de incidentes, ya que cada equipo posee solo una parte del conocimiento necesario.
+2.**Seguridad como auditoria tardia:** Cuando la seguridad se incorpora solo al final del ciclo, funciona más como una barrera que como un socio estratégico. Esto genera retrabajos y ralentiza despliegues, a la vez que deja vulnerabilidades sin detectar durante gran parte del proceso.
 
 ## Principios y beneficios de DevOps (CI/CD, automatización, colaboración; Agile como precursor)
 
