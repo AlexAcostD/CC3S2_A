@@ -46,7 +46,7 @@ Se garantiza que el producto cumple estrictamente la regulaciones y ofrece un al
 
 
 ## Ciclo tradicional de dos pasos y silos (limitaciones y anti-patrones)
-![Silos ](Actividad_1-CC3S2/imagenes/silos-equipos.jpg)
+![Silos](imagenes/silos-equipos.jpg)
 ### Descripscion General
 El **Ciclo Tradicional de dos pasos** es un proceso en 2 fases separadas:construccion(diseño,desarollo,pruebas unitarios) y operacion(despliegue , mantenimiento).Bajo esta lógica, los equipos de desarrollo entregaban un producto terminado al área de operaciones, que debía ejecutarlo y mantenerlo en producción. Esta dinámica generaba una mentalidad de handoffs (transferencias) donde el conocimiento se pasaba de un equipo a otro como si fuera un paquete cerrado, sin retroalimentación continua.
 #### Limitaciones principales del ciclo “construcción → operación”
