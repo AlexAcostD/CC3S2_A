@@ -27,6 +27,7 @@ http://127.0.0.1:8080
 2. Host: 127.0.0.1:8080 → indica el host y puerto destino.
 3. User-Agent: curl/8.5.0 → el cliente que hace la petición (en este caso curl).
 4. Accept: */* → el cliente acepta cualquier tipo de contenido en la respuesta.
+
 **Respuesta del Servidor Flask**
 1. HTTP/1.1 200 OK → el servidor responde con código 200, lo que significa éxito.
 2. Server: Werkzeug/3.1.3 Python/3.12.3 → el servidor que está atendiendo (Flask usa Werkzeug).
