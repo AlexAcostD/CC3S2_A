@@ -8,8 +8,10 @@ Para activar el entorno virtual se usa estos comandos:
  **Levantar la aplicacion con variables de entorno**
 
 PORT=8080 MESSAGE="Hola CC3S2" RELEASE="v1" python3 app.py
+
 **Extracto de salida**
 ![Levantamiento](imagenes/Levantamiento.png)
+
 **Se prueba en el navegador**
 http://127.0.0.1:8080
 ![Link](imagenes/resultadoHTTP.png)
@@ -22,6 +24,7 @@ http://127.0.0.1:8080
 2. Conexion Establecida:
 3. Trying 127.0.0.1:8080...
 4. Connected to 127.0.0.1 (127.0.0.1) port 8080
+
 **Request enviado**
 1. GET / HTTP/1.1 → petición HTTP de tipo GET al recurso raíz /.
 2. Host: 127.0.0.1:8080 → indica el host y puerto destino.
@@ -46,6 +49,7 @@ http://127.0.0.1:8080
 4. Allow: HEAD, OPTIONS, GET → el servidor te dice qué métodos sí están permitidos en esa ruta (GET, HEAD, OPTIONS).
 5. Content-Length: 153 → tamaño del cuerpo.
 6. Connection: close → la conexión se cierra después de responder.
+
 **Qué campos de respuesta cambian si actualizas MESSAGE/RELEASE sin reiniciar el proceso**
 Si cambias las variables de entorno MESSAGE o RELEASE en la consola sin reiniciar el servidor Flask, la respuesta de la aplicación no se actualiza, porque el proceso de Python tomó una copia de esas variables solo al momento de iniciarse. En sistemas tipo Unix, las variables de entorno se pasan al proceso al crearlo, y después ya no cambian aunque se modifiquen en el shell. Por eso, para que la app muestre los nuevos valores, necesitas reiniciarla con las variables actualizadas, lo que refleja el principio 12-Factor de que la configuración se define en el entorno al inicio de la ejecución.
 
@@ -66,17 +70,24 @@ Si cambias las variables de entorno MESSAGE o RELEASE en la consola sin reinicia
 127.0.0.1 - - [02/Sep/2025 09:26:06] "POST / HTTP/1.1" 405 -
 [INFO] GET /  message=Hola CC3S2 release=v1
 127.0.0.1 - - [02/Sep/2025 09:37:03] "GET / HTTP/1.1" 200 -
+
 ## DNS: nombres, registros y caché
+
 **Hosts local:**
 ![app](imagenes/miapplocal.png)
+
 **Se ejecuto este comando:** sudo nano /etc/hosts  y se agrego 127.0.0.1   miapp.local 
 ![getent](imagenes/getent.png)
+
 **Se ejecuto este comando:**dig example.com A +ttlunits
 ![example](imagenes/digExample.png)
 El TTL en DNS indica cuánto tiempo una respuesta puede mantenerse en caché: si consultas repetidamente antes de que expire, el resolver devuelve la copia y el TTL baja; cuando llega a cero, se consulta otra vez al servidor y el TTL se reinicia.
+
 **Pregunta Guia:**
 El archivo /etc/hosts es una lista local que mapea nombres a IPs y solo funciona en tu máquina, sin necesidad de un servidor DNS. En cambio, una zona DNS autoritativa es gestionada por un servidor y resuelve nombres de dominio para todo el mundo. El hosts es útil en laboratorio porque te permite simular dominios (ej. miapp.local) rápido y sin montar infraestructura de DNS.
+
 ## TLS: seguridad en tránsito con Nginx como reverse proxy
+
 **Se ejecuto este comando:** make tls-cert 
 ![CERT](imagenes/micert.png)
 1. miapp.local.key → tu clave privada. Se guarda en secreto en el servidor, y se usa para cifrar y firmar comunicaciones.
@@ -85,29 +96,39 @@ El archivo /etc/hosts es una lista local que mapea nombres a IPs y solo funciona
 ![CERT](imagenes/certificado2.png)
 1. El archivo de configuración de nginx no tiene errores de sintaxis.
 2. Nginx reconoce bien las rutas que pusiste para los certificados.
+
 **Valida el handshake:**
+
 **Se ejecuto:** openssl s_client -connect miapp.local:443 -servername miapp.local -brief
 1. CONNECTION ESTABLISHED → la conexión se hizo bien.
 2. Protocol version: TLSv1.3 → se negoció TLS 1.3 (seguro y moderno).
 3. Ciphersuite: TLS_AES_256_GCM_SHA384 → algoritmo de cifrado fuerte.
 4. Peer certificate: CN = miapp.local → el certificado corresponde a tu dominio local.
 5. Verification error: self-signed certificate → esto es normal porque tu certificado es autofirmado (no emitido por una CA como Let’s Encrypt).
+
 **curl -k https://miapp.local/**
+
 **{"message":"Hola","port":8080,"release":"v0","status":"ok"}**
 El -k sirve porque tu certificado es autofirmado.
 
+
 **Puertos y logs:**
 ![HAND](imagenes/Puerto1.png)
+
 **Se ejecuto:**ss -ltnp | grep -E ':(443|8080)'
 -127.0.0.1:8080 → tu app Flask (app.py) está corriendo en localhost, puerto 8080.
 -users:(("python",pid=2397,...)) → el proceso es Python (el que corre Flask).
 -0.0.0.0:443 → Nginx está escuchando en el puerto 443 en todas las interfaces.
+
 **Se ejecuto:** journalctl -u nginx -n 50 --no-pager
 Salio:-- No entries --
 Eso significa que nginx no ha registrado ningún log en el journal de systemd.
+
 ## 12-Factor App: port binding, configuración y logs
+
 **Ejecucion 1**
 ![Ejecucion](imagenes/ejecucion1.png)
+
 ![Ejecucion](imagenes/ejecucion2.png)
 
 -Port binding → la app no tiene un puerto fijo, sino que se enlaza al valor de la variable de entorno PORT. Así se puede ejecutar en 8080, 8081, etc., sin tocar el código.
