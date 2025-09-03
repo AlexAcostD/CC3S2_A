@@ -112,6 +112,7 @@ El archivo /etc/hosts es una lista local que mapea nombres a IPs y solo funciona
 **curl -k https://miapp.local/**
 
 **{"message":"Hola","port":8080,"release":"v0","status":"ok"}**
+
 El -k sirve porque tu certificado es autofirmado.
 
 
@@ -119,12 +120,16 @@ El -k sirve porque tu certificado es autofirmado.
 ![HAND](imagenes/Puerto1.png)
 
 **Se ejecuto:**ss -ltnp | grep -E ':(443|8080)'
+
 -127.0.0.1:8080 → tu app Flask (app.py) está corriendo en localhost, puerto 8080.
+
 -users:(("python",pid=2397,...)) → el proceso es Python (el que corre Flask).
+
 -0.0.0.0:443 → Nginx está escuchando en el puerto 443 en todas las interfaces.
 
 **Se ejecuto:** journalctl -u nginx -n 50 --no-pager
 Salio:-- No entries --
+
 Eso significa que nginx no ha registrado ningún log en el journal de systemd.
 
 ## 12-Factor App: port binding, configuración y logs
@@ -139,4 +144,5 @@ Eso significa que nginx no ha registrado ningún log en el journal de systemd.
 -Configuración por entorno → valores como MESSAGE y RELEASE se leen desde variables de entorno. Cambiar su valor modifica la respuesta JSON de la app sin necesidad de reprogramar.
 
 ![Ejecucion](imagenes/log.png)
+
 -Logs a stdout → en lugar de escribir en un archivo interno, la app imprime eventos a stdout. Luego el sistema redirige esos logs según se necesite.
