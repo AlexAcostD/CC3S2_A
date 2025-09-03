@@ -1,0 +1,20 @@
+Script started on 2025-09-02 15:07:44-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="30"]
+[?2004h]0;kali@LAPTOP-R9G9MPQ7: ~/lab-cli[01;32mkali@LAPTOP-R9G9MPQ7[00m:[01;34m~/lab-cli[00m$ [7mcd /etc[27m
+[7mls -a > ~/etc_lista.txt[27m
+[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd /etc
+ls -a > ~/etc_lista.txt
+[A
+[?2004l[?2004h]0;kali@LAPTOP-R9G9MPQ7: /etc[01;32mkali@LAPTOP-R9G9MPQ7[00m:[01;34m/etc[00m$ [7mfind /tmp -maxdepth 1 -type f \( -name '*.txt' -o -name '*.doc' \) | wc -l[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cfind /tmp -maxdepth 1 -type f \( -name '*.txt' -o -name '*.doc' \) | wc -l
+[?2004l0
+[?2004h]0;kali@LAPTOP-R9G9MPQ7: /etc[01;32mkali@LAPTOP-R9G9MPQ7[00m:[01;34m/etc[00m$ [7mcd ~[27m
+[7mprintf "Línea1\nLínea2\n" > test.txt[27m
+[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd ~
+printf "Línea1\nLínea2\n" > test.txt
+[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004l[?2004h]0;kali@LAPTOP-R9G9MPQ7: ~[01;32mkali@LAPTOP-R9G9MPQ7[00m:[01;34m~[00m$ [7mls noexiste 2>> errores.log[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls noexiste 2>> errores.log
+[?2004l[?2004h]0;kali@LAPTOP-R9G9MPQ7: ~[01;32mkali@LAPTOP-R9G9MPQ7[00m:[01;34m~[00m$ [7mfind . -maxdepth 1 -name 'archivo*.txt' | xargs echo rm[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cfind . -maxdepth 1 -name 'archivo*.txt' | xargs echo rm
+[?2004lrm
+[?2004h]0;kali@LAPTOP-R9G9MPQ7: ~[01;32mkali@LAPTOP-R9G9MPQ7[00m:[01;34m~[00m$ exit
+[?2004lexit
+
+Script done on 2025-09-02 15:11:03-05:00 [COMMAND_EXIT_CODE="0"]

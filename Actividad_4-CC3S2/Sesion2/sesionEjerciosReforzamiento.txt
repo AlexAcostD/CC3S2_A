@@ -1,0 +1,216 @@
+Script started on 2025-09-02 15:50:42-05:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="120" LINES="30"]
+[?2004h]0;kali@LAPTOP-R9G9MPQ7: ~/lab-cli[01;32mkali@LAPTOP-R9G9MPQ7[00m:[01;34m~/lab-cli[00m$ [K]0;kali@LAPTOP-R9G9MPQ7: ~/lab-cli[01;32mkali@LAPTOP-R9G9MPQ7[00m:[01;34m~/lab-cli[00m$ [K]0;kali@LAPTOP-R9G9MPQ7: ~/lab-cli[01;32mkali@LAPTOP-R9G9MPQ7[00m:[01;34m~/lab-cli[00m$ [K]0;kali@LAPTOP-R9G9MPQ7: ~/lab-cli[01;32mkali@LAPTOP-R9G9MPQ7[00m:[01;34m~/lab-cli[00m$ [K]0;kali@LAPTOP-R9G9MPQ7: ~/lab-cli[01;32mkali@LAPTOP-R9G9MPQ7[00m:[01;34m~/lab-cli[00m$ [K]0;kali@LAPTOP-R9G9MPQ7: ~/lab-cli[01;32mkali@LAPTOP-R9G9MPQ7[00m:[01;34m~/lab-cli[00m$ [K]0;kali@LAPTOP-R9G9MPQ7: ~/lab-cli[01;32mkali@LAPTOP-R9G9MPQ7[00m:[01;34m~/lab-cli[00m$ [7msudo adduser devsec[27m
+[7msudo addgroup ops[27m
+[7msudo usermod -aG ops devsec[27m[A[A]0;kali@LAPTOP-R9G9MPQ7: ~/lab-cli[01;32mkali@LAPTOP-R9G9MPQ7[00m:[01;34m~/lab-cli[00m$ sudo adduser devsec
+sudo addgroup ops
+sudo usermod -aG ops devsec
+[?2004l[sudo] password for kali: 
+fatal: The user `devsec' already exists.
+fatal: The group `ops' already exists.
+[?2004h]0;kali@LAPTOP-R9G9MPQ7: ~/lab-cli[01;32mkali@LAPTOP-R9G9MPQ7[00m:[01;34m~/lab-cli[00m$ [7mtouch secreto.txt[27m
+[7msudo chown devsec:ops secreto.txt[27m
+[7msudo chmod 640 secreto.txt[27m
+[7mls -l secreto.txt[27m
+[7mnamei -l secreto.txt[27m
+[7mid devsec[27m
+[A[A[A[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ctouch secreto.txt
+sudo chown devsec:ops secreto.txt
+sudo chmod 640 secreto.txt
+ls -l secreto.txt
+namei -l secreto.txt
+id devsec
+[A
+[?2004ltouch: cannot touch 'secreto.txt': Permission denied
+-rw-r----- 1 devsec ops 0 Sep  2 15:37 secreto.txt
+f: secreto.txt
+-rw-r----- devsec ops secreto.txt
+uid=1001(devsec) gid=1001(devsec) groups=1001(devsec),100(users),1002(ops)
+[?2004h]0;kali@LAPTOP-R9G9MPQ7: ~/lab-cli[01;32mkali@LAPTOP-R9G9MPQ7[00m:[01;34m~/lab-cli[00m$ [7mps aux[27m
+[7mps aux | grep bash        # encuentra PID[27m
+[7m# kill -SIGTERM <PID>    # cuidado, no matar tu shell real[27m
+[7msleep 100 &[27m
+[7mps aux | grep sleep[27m[A[A[A[A]0;kali@LAPTOP-R9G9MPQ7: ~/lab-cli[01;32mkali@LAPTOP-R9G9MPQ7[00m:[01;34m~/lab-cli[00m$ ps aux
+ps aux | grep bash        # encuentra PID
+# kill -SIGTERM <PID>    # cuidado, no matar tu shell real
+sleep 100 &
+ps aux | grep sleep[A[C[C[C[C[C[C[C[C[C[C[C[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1P[1P[1P[1P[C[C[C[1P[1P[1P[1P[1P[1P[1P[1P[1P[C[C[C[1P[1P[1P[1P[1P[C[C[C[1P[C[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C    # cuidado, no matar tu shell real
+sleep 100 &                          
+ps aux | grep sleep
+[K[A[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1P[1P[C[C[C[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[C[C[C[1P[1P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[C[C[C[C[1P[1@e[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C                                     
+
+
+[?2004lUSER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.8  0.3  21664 12132 ?        Ss   15:50   0:01 /sbin/init
+root           2  0.0  0.0   3060  1664 ?        Sl   15:50   0:00 /init
+root           6  0.0  0.0   3104  1904 ?        Sl   15:50   0:00 plan9 --contro
+root          49  1.1  0.4  50452 15336 ?        S<s  15:50   0:01 /usr/lib/syste
+root          96  0.1  0.1  25268  6272 ?        Ss   15:50   0:00 /usr/lib/syste
+systemd+     150  0.0  0.3  21456 12672 ?        Ss   15:50   0:00 /usr/lib/syste
+systemd+     151  0.0  0.2  91024  7680 ?        Ssl  15:50   0:00 /usr/lib/syste
+root         163  0.0  0.0   4236  2432 ?        Ss   15:50   0:00 /usr/sbin/cron
+message+     164  0.0  0.1   9628  4992 ?        Ss   15:50   0:00 @dbus-daemon -
+root         173  0.0  0.2  17964  8320 ?        Ss   15:50   0:00 /usr/lib/syste
+root         177  0.1  0.3 1755840 11904 ?       Ssl  15:50   0:00 /usr/libexec/w
+syslog       180  0.0  0.1 222508  5120 ?        Ssl  15:50   0:00 /usr/sbin/rsys
+root         191  0.0  0.0   3160  1920 hvc0     Ss+  15:50   0:00 /sbin/agetty -
+root         197  0.0  0.0   3116  1664 tty1     Ss+  15:50   0:00 /sbin/agetty -
+root         199  0.1  0.5 107028 22144 ?        Ssl  15:50   0:00 /usr/bin/pytho
+root         223  0.0  0.0  11552  1928 ?        Ss   15:50   0:00 nginx: master 
+www-data     224  0.0  0.1  13212  4616 ?        S    15:50   0:00 nginx: worker 
+www-data     225  0.0  0.1  13212  4488 ?        S    15:50   0:00 nginx: worker 
+www-data     226  0.0  0.1  13212  4488 ?        S    15:50   0:00 nginx: worker 
+www-data     227  0.0  0.1  13212  4488 ?        S    15:50   0:00 nginx: worker 
+www-data     228  0.0  0.1  13212  4616 ?        S    15:50   0:00 nginx: worker 
+www-data     230  0.0  0.1  13212  4488 ?        S    15:50   0:00 nginx: worker 
+www-data     231  0.0  0.1  13212  4616 ?        S    15:50   0:00 nginx: worker 
+www-data     232  0.0  0.1  13212  4616 ?        S    15:50   0:00 nginx: worker 
+www-data     233  0.0  0.1  13212  4488 ?        S    15:50   0:00 nginx: worker 
+www-data     234  0.0  0.1  13212  4616 ?        S    15:50   0:00 nginx: worker 
+www-data     235  0.0  0.1  13212  4616 ?        S    15:50   0:00 nginx: worker 
+www-data     236  0.0  0.1  13212  4488 ?        S    15:50   0:00 nginx: worker 
+root         306  0.0  0.0   3068   896 ?        Ss   15:50   0:00 /init
+root         307  0.0  0.0   3084  1024 ?        S    15:50   0:00 /init
+kali         308  0.0  0.1   6072  5120 pts/0    Ss   15:50   0:00 -bash
+root         309  0.0  0.1   6824  4480 pts/1    Ss   15:50   0:00 /bin/login -f
+kali         360  0.1  0.2  20296 11008 ?        Ss   15:50   0:00 /usr/lib/syste
+kali         361  0.0  0.0  21152  3520 ?        S    15:50   0:00 (sd-pam)
+kali         372  0.0  0.1   6072  5248 pts/1    S+   15:50   0:00 -bash
+kali         395  0.0  0.0   3148  1920 pts/0    S+   15:50   0:00 script -q evid
+kali         396  0.0  0.1   6084  5120 pts/2    Ss   15:50   0:00 bash -i
+kali         474  0.0  0.1   8284  4096 pts/2    R+   15:52   0:00 ps aux
+kali         308  0.0  0.1   6072  5120 pts/0    Ss   15:50   0:00 -[01;31m[Kbash[m[K
+kali         372  0.0  0.1   6072  5248 pts/1    S+   15:50   0:00 -[01;31m[Kbash[m[K
+kali         396  0.0  0.1   6084  5120 pts/2    Ss   15:50   0:00 [01;31m[Kbash[m[K -i
+kali         476  0.0  0.0   4092  1920 pts/2    S+   15:52   0:00 grep --color=auto [01;31m[Kbash[m[K
+[1] 477
+kali         477  0.0  0.0   3128  1664 pts/2    S    15:52   0:00 [01;31m[Ksleep[m[K 100
+kali         479  0.0  0.0   4092  1920 pts/2    S+   15:52   0:00 grep --color=auto [01;31m[Ksleep[m[K
+[?2004h]0;kali@LAPTOP-R9G9MPQ7: ~/lab-cli[01;32mkali@LAPTOP-R9G9MPQ7[00m:[01;34m~/lab-cli[00m$ [7mkill <PID>[27mkill <PID>[K[K[K[K[K477
+[?2004l[?2004h]0;kali@LAPTOP-R9G9MPQ7: ~/lab-cli[01;32mkali@LAPTOP-R9G9MPQ7[00m:[01;34m~/lab-cli[00m$ [7msystemctl status systemd-logind[27m
+[7mjournalctl -u systemd-logind -n 10[27m
+[A[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Csystemctl status systemd-logind
+journalctl -u systemd-logind -n 10
+[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+[?2004l[?1h=[0;1;32m●[0m systemd-logind.service - User Login Management[m
+     Loaded: loaded (]8;;file://LAPTOP-R9G9MPQ7/usr/lib/systemd/system/systemd-logind.service/usr/lib/systemd/system/systemd-logind.service]8;;; static[0;1;32m[0m)[m
+    Drop-In: /usr/lib/systemd/system/systemd-logind.service.d[m
+             └─]8;;file://LAPTOP-R9G9MPQ7/usr/lib/systemd/system/systemd-logind.service.d/dbus.confdbus.conf]8;;[m
+     Active: [0;1;32mactive (running)[0m since Tue 2025-09-02 15:50:26 -05; 2min 16s ago[m
+       Docs: ]8;;man:sd-login(3)man:sd-login(3)]8;;[m
+             ]8;;man:systemd-logind.service(8)man:systemd-logind.service(8)]8;;[m
+             ]8;;man:logind.conf(5)man:logind.conf(5)]8;;[m
+             ]8;;man:org.freedesktop.login1(5)man:org.freedesktop.login1(5)]8;;[m
+   Main PID: 173 (systemd-logind)[m
+     Status: "[0;1;36mProcessing requests...[0m"[m
+      Tasks: 1 (limit: 4472)[m
+   FD Store: 0[0;38;5;245m (limit: 512)[0m[m
+     Memory: 1.7M (peak: 2.2M)[m
+        CPU: 89ms[m
+     CGroup: /system.slice/systemd-logind.service[m
+             └─[0;38;5;245m173 /usr/lib/systemd/systemd-logind[0m[m
+[m
+Sep 02 15:53:06 LAPTOP-R9G9MPQ7 systemd[1]: Starting systemd-logind.service - Us[m[7m>[27m
+Sep 02 15:50:26 LAPTOP-R9G9MPQ7 systemd-logind[173]: New seat seat0.[m
+Sep 02 15:50:26 LAPTOP-R9G9MPQ7 systemd[1]: Started systemd-logind.service - Use[m[7m>[27m
+Sep 02 15:50:28 LAPTOP-R9G9MPQ7 systemd-logind[173]: New session 3 of user kali.[m
+[7mlines 1-22/22 (END)[27m[K[K[K[7mlines 1-22/22 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7mlines 1-22/22 (END)[27m[K[K [KESCESC[KOO[KAA[K...skipping...
+[0;1;32m●[0m systemd-logind.service - User Login Management[m
+     Loaded: loaded (]8;;file://LAPTOP-R9G9MPQ7/usr/lib/systemd/system/systemd-logind.service/usr/lib/systemd/system/systemd-logind.service]8;;; static[0;1;32m[0m)[m
+    Drop-In: /usr/lib/systemd/system/systemd-logind.service.d[m
+             └─]8;;file://LAPTOP-R9G9MPQ7/usr/lib/systemd/system/systemd-logind.service.d/dbus.confdbus.conf]8;;[m
+     Active: [0;1;32mactive (running)[0m since Tue 2025-09-02 15:50:26 -05; 2min 16s ago[m
+       Docs: ]8;;man:sd-login(3)man:sd-login(3)]8;;[m
+             ]8;;man:systemd-logind.service(8)man:systemd-logind.service(8)]8;;[m
+             ]8;;man:logind.conf(5)man:logind.conf(5)]8;;[m
+             ]8;;man:org.freedesktop.login1(5)man:org.freedesktop.login1(5)]8;;[m
+   Main PID: 173 (systemd-logind)[m
+     Status: "[0;1;36mProcessing requests...[0m"[m
+      Tasks: 1 (limit: 4472)[m
+   FD Store: 0[0;38;5;245m (limit: 512)[0m[m
+     Memory: 1.7M (peak: 2.2M)[m
+        CPU: 89ms[m
+     CGroup: /system.slice/systemd-logind.service[m
+             └─[0;38;5;245m173 /usr/lib/systemd/systemd-logind[0m[m
+[m
+Sep 02 15:53:06 LAPTOP-R9G9MPQ7 systemd[1]: Starting systemd-logind.service - Us[m[7m>[27m
+Sep 02 15:50:26 LAPTOP-R9G9MPQ7 systemd-logind[173]: New seat seat0.[m
+Sep 02 15:50:26 LAPTOP-R9G9MPQ7 systemd[1]: Started systemd-logind.service - Use[m[7m>[27m
+Sep 02 15:50:28 LAPTOP-R9G9MPQ7 systemd-logind[173]: New session 3 of user kali.[m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[7mlines 1-22/22 (END)[27m[K[K [KESCESC[KOO[KAA[K[K[7mlines 1-22/22 (END)[27m[K[K [KESCESC[KOO[KAA[K[K[7mlines 1-22/22 (END)[27m[K[K [KESCESC[KOO[KAA[K[K[7mlines 1-22/22 (END)[27m[K[K [KESCESC[KOO[KAA[K[K[7mlines 1-22/22 (END)[27m[K[K [KESCESC[KOO[KAA[K[K[7mlines 1-22/22 (END)[27m[K[K [KESCESC[KOO[KAA[K[K[7mlines 1-22/22 (END)[27m[K[K [KESCESC[KOO[KAA[K[K[7mlines 1-22/22 (END)[27m[K[K [KESCESC[KOO[KCC[H[2J[H[H[2J[H[0;1;32m[0mnagement[m
+]8;;file://LAPTOP-R9G9MPQ7/usr/lib/systemd/system/systemd-logind.servicestem/systemd-logind.service]8;;; static[0;1;32m[0m)[m
+temd-logind.service.d[m
+[m
+[0;1;32m[0m2025-09-02 15:50:26 -05; 2min 16s ago[m
+[m
+]8;;man:systemd-logind.service(8)8)]8;;[m
+[m
+]8;;man:org.freedesktop.login1(5)5)]8;;[m
+[m
+[m
+[m
+[m
+[m
+[m
+d.service[m
+[0;38;5;245memd-logind[0m[m
+[m
+1]: Starting systemd-logind.service - User Login Management...[m
+logind[173]: New seat seat0.[m
+1]: Started systemd-logind.service - User Login Management.[m
+logind[173]: New session 3 of user kali.[m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[7mlines 1-22/22 (END)[27m[K[K [KESCESC[KOO[KDD[H[2J[H[H[2J[H[0;1;32m●[0m systemd-logind.service - User Login Management[m
+     Loaded: loaded (]8;;file://LAPTOP-R9G9MPQ7/usr/lib/systemd/system/systemd-logind.service/usr/lib/systemd/system/systemd-logind.service]8;;; static[0;1;32m[0m)[m
+    Drop-In: /usr/lib/systemd/system/systemd-logind.service.d[m
+             └─]8;;file://LAPTOP-R9G9MPQ7/usr/lib/systemd/system/systemd-logind.service.d/dbus.confdbus.conf]8;;[m
+     Active: [0;1;32mactive (running)[0m since Tue 2025-09-02 15:50:26 -05; 2min 16s ago[m
+       Docs: ]8;;man:sd-login(3)man:sd-login(3)]8;;[m
+             ]8;;man:systemd-logind.service(8)man:systemd-logind.service(8)]8;;[m
+             ]8;;man:logind.conf(5)man:logind.conf(5)]8;;[m
+             ]8;;man:org.freedesktop.login1(5)man:org.freedesktop.login1(5)]8;;[m
+   Main PID: 173 (systemd-logind)[m
+     Status: "[0;1;36mProcessing requests...[0m"[m
+      Tasks: 1 (limit: 4472)[m
+   FD Store: 0[0;38;5;245m (limit: 512)[0m[m
+     Memory: 1.7M (peak: 2.2M)[m
+        CPU: 89ms[m
+     CGroup: /system.slice/systemd-logind.service[m
+             └─[0;38;5;245m173 /usr/lib/systemd/systemd-logind[0m[m
+[m
+Sep 02 15:53:06 LAPTOP-R9G9MPQ7 systemd[1]: Starting systemd-logind.service - Us[m[7m>[27m
+Sep 02 15:50:26 LAPTOP-R9G9MPQ7 systemd-logind[173]: New seat seat0.[m
+Sep 02 15:50:26 LAPTOP-R9G9MPQ7 systemd[1]: Started systemd-logind.service - Use[m[7m>[27m
+Sep 02 15:50:28 LAPTOP-R9G9MPQ7 systemd-logind[173]: New session 3 of user kali.[m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[7mlines 1-22/22 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7mlines 1-22/22 (END)[27m[K[K [KESCESC[KOO[KBB[K[K[7mlines 1-22/22 (END)[27m[K[K[K[7mlines 1-22/22 (END)[27m[K[K[K[7mlines 1-22/22 (END)[27m[K[K[K[7mlines 1-22/22 (END)[27m[K
+[1]+  Terminated              sleep 100
+[K[?1l>[?1h=Sep 02 15:53:06 LAPTOP-R9G9MPQ7 systemd[1]: Starting systemd-logind.service - Us[m[7m>[27m
+Sep 02 15:50:26 LAPTOP-R9G9MPQ7 systemd-logind[173]: New seat seat0.[m
+Sep 02 15:50:26 LAPTOP-R9G9MPQ7 systemd[1]: Started systemd-logind.service - Use[m[7m>[27m
+Sep 02 15:50:28 LAPTOP-R9G9MPQ7 systemd-logind[173]: New session 3 of user kali.[m
+[7mlines 1-4/4 (END)[27m[K[K[?1l>
+[?2004h]0;kali@LAPTOP-R9G9MPQ7: ~/lab-cli[01;32mkali@LAPTOP-R9G9MPQ7[00m:[01;34m~/lab-cli[00m$ [7mumask 027[27mumask 027
+[?2004l[?2004h]0;kali@LAPTOP-R9G9MPQ7: ~/lab-cli[01;32mkali@LAPTOP-R9G9MPQ7[00m:[01;34m~/lab-cli[00m$ [K]0;kali@LAPTOP-R9G9MPQ7: ~/lab-cli[01;32mkali@LAPTOP-R9G9MPQ7[00m:[01;34m~/lab-cli[00m$ [K]0;kali@LAPTOP-R9G9MPQ7: ~/lab-cli[01;32mkali@LAPTOP-R9G9MPQ7[00m:[01;34m~/lab-cli[00m$ exit
+[?2004lexit
+
+Script done on 2025-09-02 15:54:48-05:00 [COMMAND_EXIT_CODE="0"]
