@@ -3,7 +3,7 @@
 
 ### Ejercicios de reforzamiento
 
-[CLI](imagenes/CLI.png)
+![CLI](imagenes/CLI.png)
 
 1.**Navegación y redirección**:cd /etc; ls -a > ~/etc_lista.txt
 
@@ -57,47 +57,47 @@ Resultado: Tendrás un archivo con la lista completa de /etc
 -Resultado: Muestra cuántas líneas tiene lista.txt
 
 ## Sección 2: Administración básica 
-[CLI](imagenes/usuarios.png)
+![usuarios](imagenes/usuarios.png)
 
 1.**Gestión de usuarios y grupos:**
 
-sudo adduser devsec        # Crear usuario (ya existía)
+sudo adduser devsec       
 
-sudo addgroup ops          # Crear grupo (ya existía)  
+sudo addgroup ops           
 
-sudo usermod -aG ops devsec # Agregar usuario al grupo
+sudo usermod -aG ops devsec 
 
 2.**Permisos de archivos:**
 
-touch secreto.txt                   # Crear archivo
+touch secreto.txt                   
 
-sudo chown devsec:ops secreto.txt   # Cambiar propietario y grupo
+sudo chown devsec:ops secreto.txt  
 
-sudo chmod 640 secreto.txt          # Permisos: propietario(rw), grupo(r), otros(0)
+sudo chmod 640 secreto.txt         
 
-ls -l secreto.txt                   # Verificar permisos
+ls -l secreto.txt                 
 
 3.**Verificación de permisos:**
 
-namei -l secreto.txt  # Mostrar ruta y permisos
+namei -l secreto.txt  
 
-id devsec             # Ver grupos del usuario
+id devsec           
 
 4.**Gestión de procesos:**
 
-ps aux | grep bash    # Encontrar procesos bash
+ps aux | grep bash    
 
-sleep 100 &           # Proceso en background
+sleep 100 &           
 
-ps aux | grep sleep   # Ver proceso sleep
+ps aux | grep sleep   
 
-kill 477              # Matar proceso (PID 477)
+kill 477              
 
 5.**Gestión de servicios:**
 
-systemctl status systemd-logind    # Estado del servicio
+systemctl status systemd-logind    
 
-journalctl -u systemd-logind -n 10 # Últimos 10 logs
+journalctl -u systemd-logind -n 10
 
 6.**Umask:**
 
@@ -128,9 +128,9 @@ awk -F: '{print $1}' /etc/passwd | sort | uniq > usuarios.txt
 
 -F:: Usa ":" como separador | {print $1}: Imprime primer campo
 
- 4.**tr para convertir a mayúsculas + tee**
- printf "hola\n" | tr 'a-z' 'A-Z' | tee mayus.txt
- 
+4.**tr para convertir a mayúsculas + tee**
+printf "hola\n" | tr 'a-z' 'A-Z' | tee mayus.txt
+
 -Funcion: Convierte minúsculas a MAYÚSCULAS
 
 -Transformación: hola → HOLA
