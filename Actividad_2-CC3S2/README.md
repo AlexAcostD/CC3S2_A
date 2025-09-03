@@ -63,11 +63,14 @@ Si cambias las variables de entorno MESSAGE o RELEASE en la consola sin reinicia
 
 **Logs como flujo**
 [INFO] GET /  message=Hola CC3S2 release=v1
-127.0.0.1 - - [02/Sep/2025 09:08:19] "GET / HTTP/1.1" 200 -        
+127.0.0.1 - - [02/Sep/2025 09:08:19] "GET / HTTP/1.1" 200 -  
+
 127.0.0.1 - - [02/Sep/2025 09:08:20] "GET /favicon.ico HTTP/1.1" 404 -
+
 [INFO] GET /  message=Hola CC3S2 release=v1
 127.0.0.1 - - [02/Sep/2025 09:12:30] "GET / HTTP/1.1" 200 -        
 127.0.0.1 - - [02/Sep/2025 09:26:06] "POST / HTTP/1.1" 405 -
+
 [INFO] GET /  message=Hola CC3S2 release=v1
 127.0.0.1 - - [02/Sep/2025 09:37:03] "GET / HTTP/1.1" 200 -
 
@@ -135,5 +138,5 @@ Eso significa que nginx no ha registrado ningún log en el journal de systemd.
 
 -Configuración por entorno → valores como MESSAGE y RELEASE se leen desde variables de entorno. Cambiar su valor modifica la respuesta JSON de la app sin necesidad de reprogramar.
 
-![Ejecucion](imagenes/long.png)
+![Ejecucion](imagenes/log.png)
 -Logs a stdout → en lugar de escribir en un archivo interno, la app imprime eventos a stdout. Luego el sistema redirige esos logs según se necesite.
