@@ -1,10 +1,11 @@
 ## HTTP: Fundamentos y herramientas
  **Activar el entorno virtual (venv):**
+Para activar el entorno virtual se usa estos comandos:
+**source .venv/bin/activate**
+**pip install flask**
 
-source .venv/bin/activate
-pip install flask
-**Verificar** que se tenga los archivos **app.py , Makefile**
- **Levantar la aplicacion con variables de entorno **
+**Verificar** que se tenga los archivos **app.py y Makefile**
+ **Levantar la aplicacion con variables de entorno**
  PORT=8080 MESSAGE="Hola CC3S2" RELEASE="v1" python3 app.py
 **Extracto de salida**
 ![Levantamiento](imagenes/Levantamiento.png)
@@ -79,7 +80,7 @@ El archivo /etc/hosts es una lista local que mapea nombres a IPs y solo funciona
 -miapp.local.crt → tu certificado. Contiene la clave pública y la identidad del dominio (miapp.local). Los clientes lo usan para verificar que hablan con el servidor correcto.
 ![CERT](imagenes/certificado1.png)
 ![CERT](imagenes/certificado2.png)
--Tu archivo de configuración de nginx no tiene errores de sintaxis.
+-El archivo de configuración de nginx no tiene errores de sintaxis.
 -Nginx reconoce bien las rutas que pusiste para los certificados.
 **Valida el handshake:**
 **Se ejecuto:** openssl s_client -connect miapp.local:443 -servername miapp.local -brief
